@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "523303949029",
+    "firebase_url": "https://djsisko-9ed52-default-rtdb.firebaseio.com",
+    "project_id": "djsisko-9ed52",
+    "storage_bucket": "djsisko-9ed52.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523303949029:android:63e7193625aec1a61a3a0c",
+        "android_client_info": {
+          "package_name": "com.DjSisko"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnX1FuntCnYR-j6B1f5NfIEWwG1wkgIs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:523303949029:android:b287599f797e0efb1a3a0c",
+        "android_client_info": {
+          "package_name": "com.djsisko"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnX1FuntCnYR-j6B1f5NfIEWwG1wkgIs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
