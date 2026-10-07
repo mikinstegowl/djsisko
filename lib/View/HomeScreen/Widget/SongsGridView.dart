@@ -184,7 +184,7 @@ class SongsGridView extends StatelessWidget {
                                   fontSize: 11,
                                   maxLine: 2,
                                   txtTitle: items?[index].songArtist ?? '',
-                                  txtColor: AppColors.error,
+                                  txtColor: AppColors.appButton,
                                   fontWeight: FontWeight.w300,
                                 ),
                               ),

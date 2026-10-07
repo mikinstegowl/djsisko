@@ -257,11 +257,11 @@ class BaseController extends GetxController {
     if (status.isDenied) {
       status = await Permission.mediaLibrary.request();
     }
-    FilePickerResult? result = await FilePicker.platform
-        .pickFiles(type: FileType.image, withData: true);
+    List<PlatformFile> result =
+        await FilePicker.pickFiles(type: FileType.image);
 
-    if (result != null) {
-      File files = File(result.files.single.path ?? '');
+    if (result.isNotEmpty) {
+      File files = File(result.single.path ?? '');
 
       final croppedFile = await ImageCropper().cropImage(
           sourcePath: files.path ?? '',

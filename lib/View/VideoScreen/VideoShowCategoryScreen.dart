@@ -129,7 +129,7 @@ class VideoShowCategoryListScreen extends GetView<VideoController> {
                                           ?.data?.videos?[index]
                                               .videosName ??
                                           '',
-                                      txtColor: AppColors.error,
+                                      txtColor: AppColors.appButton,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w300,
                                       textAlign: TextAlign.center,

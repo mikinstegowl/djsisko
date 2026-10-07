@@ -12,6 +12,7 @@ import 'package:new_music_app/Utils/SharedPreferences/shared_preferences.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AppButtonWidget.dart';
 import 'package:new_music_app/Utils/Widgets/AppTextWidget.dart';
+import 'package:new_music_app/Utils/Widgets/Dialogs/DeleteAccountDialog.dart';
 import 'package:new_music_app/View/MenuScreen/SubScreens/ContectUsScreen.dart';
 import 'package:new_music_app/View/MenuScreen/SubScreens/MyFavoriteVideosScreen.dart';
 import 'package:new_music_app/View/MenuScreen/SubScreens/NotificationScreen.dart';
@@ -249,6 +250,29 @@ class MenuScreen extends GetView<MenuPageController> {
                     color: AppColors.white,
                   ),
                 ),
+                if (UserPreference.getValue(key: PrefKeys.email) != null)
+                  ListTile(
+                    onTap: () {
+                      AppConst.liveVideoUrl.value = false;
+                      Get.dialog(const DeleteAccountDialog());
+                    },
+                    leading: Icon(
+                      Icons.person_remove_outlined,
+                      color: AppColors.white,
+                      size: 20.r,
+                    ),
+                    title: const AppTextWidget(
+                      txtTitle: 'Delete Account',
+                      fontSize: 14,
+                      txtColor: AppColors.white,
+                    ),
+                    trailing: Icon(
+                      Icons.navigate_next_outlined,
+                      size: 35.r,
+                      weight: 0.5,
+                      color: AppColors.white,
+                    ),
+                  ),
                 ListTile(
                   onTap: () {
                     AppConst.liveVideoUrl.value = false;
@@ -284,9 +308,12 @@ class MenuScreen extends GetView<MenuPageController> {
                   ),
                 ),
                 const Spacer(),
-                Image.asset(
-                  AppAssets.alajazaLogo,
-                  width: 200.w,
+                Flexible(
+                  flex: 4,
+                  child: Image.asset(
+                    AppAssets.alajazaLogo,
+                    width: 200.w,
+                  ),
                 ),
                 const Spacer(),
               ],

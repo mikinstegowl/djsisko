@@ -58,11 +58,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDbrvCPQULNIvbZuwI3p4pJCjMU-qfUx4I',
-    appId: '1:90280684777:ios:e258880946f8f5caeb5478',
-    messagingSenderId: '90280684777',
-    projectId: 'music-d7a6d',
-    storageBucket: 'music-d7a6d.firebasestorage.app',
-    iosBundleId: 'com.jayLyrics',
+    apiKey: 'AIzaSyAjrd3bMGr1BHr4DzdSWAOCsg5n-UkNfPg',
+    appId: '1:523303949029:ios:401d69d7c8dec69d1a3a0c',
+    messagingSenderId: '523303949029',
+    projectId: 'djsisko-9ed52',
+    storageBucket: 'djsisko-9ed52.firebasestorage.app',
+    iosBundleId: 'com.djsiskoapp.music',
   );
 }

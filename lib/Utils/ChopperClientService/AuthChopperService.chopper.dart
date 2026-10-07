@@ -158,4 +158,18 @@ final class _$AuthChopperService extends AuthChopperService {
     );
     return client.send<GeneralErrorModel, GeneralErrorModel>($request);
   }
+
+  @override
+  Future<Response<GeneralErrorModel>> deleteAccountApi(
+      {required Map<String, dynamic> param}) {
+    final Uri $url = Uri.parse('/auth/delete-account');
+    final $body = param;
+    final Request $request = Request(
+      'POST',
+      $url,
+      client.baseUrl,
+      body: $body,
+    );
+    return client.send<GeneralErrorModel, GeneralErrorModel>($request);
+  }
 }

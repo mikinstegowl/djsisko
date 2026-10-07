@@ -62,7 +62,7 @@ class SearchScreen extends GetView<MenuPageController> {
                           ),
                           5.verticalSpace,
                           const Divider(
-                            color: AppColors.error,
+                            color: AppColors.appButton,
                           ),
                           InkWell(
                             onTap: () {
@@ -475,7 +475,7 @@ class SearchScreen extends GetView<MenuPageController> {
                                                                     .videosName ??
                                                                 '',
                                                             txtColor:
-                                                                AppColors.error,
+                                                                AppColors.appButton,
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w300,

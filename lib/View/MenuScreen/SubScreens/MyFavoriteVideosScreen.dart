@@ -106,7 +106,7 @@ class MyFavoriteVideoScreen extends GetView<MenuPageController> {
                                         txtTitle: controller.getFavouriteVideoModel
                                                 .value?.data?[index].videosName ??
                                             '',
-                                        txtColor: AppColors.error,
+                                        txtColor: AppColors.appButton,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w300,
                                         textAlign: TextAlign.center,

@@ -45,19 +45,19 @@ dependencies:
     git:
       url: https://github.com/florent37/Flutter-AssetsAudioPlayer
   audio_video_progress_bar: ^1.0.1
-  file_picker: ^8.0.3
+  file_picker: ^13.1.0
   image_picker: ^1.0.8
   permission_handler: ^11.3.1
   http: ^1.2.1
   image_cropper: ^9.1.0
   firebase_core:
-  firebase_messaging: ^14.9.2
-  firebase_database: ^10.5.5
-  firebase_auth: ^4.17.5
+  firebase_messaging: ^16.7.0
+  firebase_database: ^12.6.0
+  firebase_auth: ^6.7.0
   flutter_local_notifications: ^18.0.1
   miniplayer: ^1.0.1
   camera: ^0.10.0+1
-  share_plus: ^9.0.0
+  share_plus: ^13.3.1
   url_launcher: ^6.2.6
   google_mobile_ads: ^5.1.0
   cloud_firestore:
@@ -97,6 +97,8 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  config:
+    enable-swift-package-manager: false
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

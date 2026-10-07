@@ -108,7 +108,7 @@ class _AnimatedBottomSheetState extends State<AnimatedBottomSheet>
                                     child: ProgressBar(
                                       barHeight: 2.0,
                                       progressBarColor: AppColors.appButton,
-                                      thumbColor: AppColors.error,
+                                      thumbColor: AppColors.appButton,
                                       baseBarColor: Colors.white,
                                       timeLabelTextStyle:
                                           const TextStyle(color: Colors.white),

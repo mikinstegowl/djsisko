@@ -72,16 +72,20 @@ class HomeController extends BaseController {
     });
   }
 
+  bool _loadingMoreHome = false;
+
   @override
   Future<void> scrollListener() async {
-    if (scrollController.hasClients) {
-      if (scrollController.position.pixels ==
-          scrollController.position.maxScrollExtent) {
-        if (paginationInt < maxPages) {
-          paginationInt = paginationInt + 1;
-          await homeDataApi();
-        }
-      }
+    if (!scrollController.hasClients || _loadingMoreHome) return;
+    final position = scrollController.position;
+    // Load the next page shortly before the end; an exact match on
+    // maxScrollExtent is unreliable with iOS bounce scrolling.
+    if (position.pixels >= position.maxScrollExtent - 300 &&
+        paginationInt < maxPages) {
+      _loadingMoreHome = true;
+      paginationInt = paginationInt + 1;
+      await homeDataApi();
+      _loadingMoreHome = false;
     }
   }
 

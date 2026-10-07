@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -48,6 +49,10 @@ void main() async {
   );
   final a = await FirebaseMessaging.instance.getAPNSToken();
   print("this is fcm $a");
+  if (kDebugMode) {
+    // Firebase token for sending test pushes from the Firebase console
+    print("FCM_TOKEN ${await FirebaseMessaging.instance.getToken()}");
+  }
 
   AssetsAudioPlayer.setupNotificationsOpenAction((notification) {
     return true;

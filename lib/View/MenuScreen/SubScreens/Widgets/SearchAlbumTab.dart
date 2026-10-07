@@ -74,7 +74,7 @@ class SearchAlbumTab extends GetView<MenuPageController> {
                 txtTitle: controller.searchDataModel.value?.data?.albums?[index]
                         .categoryName ??
                     '',
-                txtColor: AppColors.error,
+                txtColor: AppColors.appButton,
                 fontWeight: FontWeight.w300,
               ),
               3.verticalSpace

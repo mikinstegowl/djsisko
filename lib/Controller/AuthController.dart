@@ -8,6 +8,7 @@ import 'package:new_music_app/Controller/BaseController.dart';
 import 'package:new_music_app/Utils/ChopperClientService/AuthChopperService.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Constants/CustomSnackBar.dart';
+import 'package:new_music_app/Utils/Models/GeneralErrorModel.dart';
 import 'package:new_music_app/Utils/Models/WalkthroughDataModel.dart';
 import 'package:new_music_app/Utils/Router/RouteName.dart';
 import 'package:new_music_app/Utils/SharedPreferences/PrefKeys.dart';
@@ -138,6 +139,7 @@ class AuthController extends BaseController {
         'fcm': fcm,
       });
       if (response.isSuccessful && response.body?.success == true) {
+        await UserPreference.removeKey(key: PrefKeys.logInToken);
         clearController();
         AppConst.currentTabIndex = 0;
         Get.offNamed(RoutesName.loginScreen);
@@ -201,16 +203,28 @@ class AuthController extends BaseController {
         "fcm": fcm,
       };
       print("this is FCM$fcm");
-      final response = await _authChopperService.logInAPi(param: param);
+      var response = await _authChopperService.logInAPi(param: param);
+      // A guest token left over from an earlier session makes the server fail
+      // while converting the guest; retry once without it.
+      if (response.statusCode >= 500 &&
+          UserPreference.getValue(key: PrefKeys.logInToken) != null) {
+        await UserPreference.removeKey(key: PrefKeys.logInToken);
+        response = await _authChopperService.logInAPi(param: param);
+      }
       if (response.body?.success == true) {
         UserPreference.setValue(
             key: PrefKeys.logInToken, value: response.body?.data?.token);
         UserPreference.setValue(
             key: PrefKeys.email, value: userNameController.value.text);
+        AppConst.currentTabIndex = 0;
         Get.offNamed(RoutesName.homeScreen);
         update();
       } else {
-        Utility.showSnackBar(response.body?.message, isError: true);
+        Utility.showSnackBar(
+            response.body?.message ??
+                (response.error as GeneralErrorModel?)?.message ??
+                'Login failed. Please try again.',
+            isError: true);
       }
     } catch (e) {
       log('', error: e.toString(), name: "Login error");
