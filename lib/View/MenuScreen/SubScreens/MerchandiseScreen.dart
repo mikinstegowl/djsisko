@@ -1,5 +1,5 @@
+import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:flutter/material.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
 import 'package:new_music_app/Utils/Widgets/AppNavigationBar.dart';
 import 'package:new_music_app/Utils/Widgets/TitleBackButtonWidget.dart';
@@ -50,11 +50,7 @@ class _MerchandiseScreenState extends State<MerchandiseScreen> {
         body: Container(
           width: double.maxFinite,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    AppAssets.blackBackgroundScreen,
-                  ),
-                  fit: BoxFit.cover)),
+              color: AppColors.smokeBlack),
           child: Column(
             children: [
               const TitleBackButtonWidget(title: 'Merchandise'),

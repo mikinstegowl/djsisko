@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/RadioController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
@@ -24,12 +23,7 @@ class RadioScreen extends GetView<RadioController> {
         builder: (controller) {
           return Container(
             width: double.maxFinite,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      AppAssets.blackBackgroundScreen,
-                    ),
-                    fit: BoxFit.cover)),
+            decoration: const BoxDecoration(color: AppColors.smokeBlack),
             child: StreamBuilder(
                 stream: controller.audioPlayer.realtimePlayingInfos,
                 builder: (context, snapshot) {
@@ -59,65 +53,66 @@ class RadioScreen extends GetView<RadioController> {
                               borderRadius: BorderRadius.circular(15.r)),
                           child: Column(
                             children: [
-                              Stack(
-                                children: [
-                                  controller.liveMediaModel.value?.data
-                                              ?.image !=
-                                          null
-                                      ? CachedNetworkImageWidget(
-                                          height: 300.h,
-                                          image: controller.liveMediaModel.value
-                                                  ?.data?.image ??
-                                              "")
-                                      : SizedBox(
-                                          height: 300.h, child: const AppLoder()),
-                                  Positioned(
-                                    bottom: 0,
-                                    left: 10,
-                                    right: 0,
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Flexible(
-                                          flex: 2,
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              AppTextWidget(
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w600,
-                                                txtTitle: controller
-                                                        .liveMediaModel
-                                                        .value
-                                                        ?.data
-                                                        ?.title ??
-                                                    '',
-                                                txtColor: AppColors.white,
-                                              ),
-                                              AppTextWidget(
-                                                  fontSize: 10,
-                                                  fontWeight: FontWeight.w800,
+                              Expanded(
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: [
+                                    controller.liveMediaModel.value?.data
+                                                ?.image !=
+                                            null
+                                        ? CachedNetworkImageWidget(
+                                            image: controller.liveMediaModel
+                                                    .value?.data?.image ??
+                                                "")
+                                        : const AppLoder(),
+                                    Positioned(
+                                      bottom: 0,
+                                      left: 10,
+                                      right: 0,
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.end,
+                                        children: [
+                                          Flexible(
+                                            flex: 2,
+                                            child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                AppTextWidget(
+                                                  fontSize: 15,
+                                                  fontWeight: FontWeight.w600,
+                                                  txtTitle: controller
+                                                          .liveMediaModel
+                                                          .value
+                                                          ?.data
+                                                          ?.title ??
+                                                      '',
                                                   txtColor: AppColors.white,
-                                                  txtTitle:
-                                                      "POWERED BY: ${AppConst.poweredBy}"),
-                                            ],
+                                                ),
+                                                AppTextWidget(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w800,
+                                                    txtColor: AppColors.white,
+                                                    txtTitle:
+                                                        "POWERED BY: ${AppConst.poweredBy}"),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                        50.horizontalSpace,
-                                        Icon(
-                                          Icons.headphones,
-                                          color:
-                                              AppColors.textFormFieldTextColor,
-                                          size: 35.r,
-                                        )
-                                      ],
+                                          50.horizontalSpace,
+                                          Icon(
+                                            Icons.headphones,
+                                            color: AppColors
+                                                .textFormFieldTextColor,
+                                            size: 35.r,
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                               5.verticalSpace,
                               Container(

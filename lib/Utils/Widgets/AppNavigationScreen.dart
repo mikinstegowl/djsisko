@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:new_music_app/Controller/BaseController.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Constants/CustomSnackBar.dart';
 import 'package:new_music_app/Utils/Services/AdService.dart';
@@ -78,9 +77,7 @@ class _AppNavigationScreenState extends State<AppNavigationScreen>
                   clipBehavior: Clip.hardEdge,
                   child: Container(
                     decoration: BoxDecoration(
-                        image: const DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage(AppAssets.blackBackgroundScreen)),
+                        color: AppColors.smokeBlack,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30.r),
                         ),

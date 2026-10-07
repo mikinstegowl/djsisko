@@ -103,11 +103,7 @@ class CreateProfileScreen extends GetView<AuthController> {
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 30.w),
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    AppAssets.blackBackgroundScreen,
-                  ),
-                  fit: BoxFit.cover)),
+              color: AppColors.smokeBlack),
           child: SingleChildScrollView(
             child: Form(
               key: key,

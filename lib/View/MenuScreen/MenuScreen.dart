@@ -26,11 +26,7 @@ class MenuScreen extends GetView<MenuPageController> {
     return Container(
       width: double.maxFinite,
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                AppAssets.blackBackgroundScreen,
-              ),
-              fit: BoxFit.cover)),
+          color: AppColors.smokeBlack),
       child: GetBuilder<MenuPageController>(
           init: controller,
           initState: (state) {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/VideoController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
@@ -19,12 +18,7 @@ class VideoListScreen extends GetView<VideoController> {
       child: Container(
         height: double.maxFinite,
         decoration: const BoxDecoration(
-            color: AppColors.appButton,
-            image: DecorationImage(
-                image: AssetImage(
-                  AppAssets.blackBackgroundScreen,
-                ),
-                fit: BoxFit.cover)),
+            color: AppColors.smokeBlack),
         child: Stack(
           children: [
             GetBuilder<VideoController>(

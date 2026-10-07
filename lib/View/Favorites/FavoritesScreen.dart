@@ -1,3 +1,4 @@
+import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -30,11 +31,7 @@ class FavoritesScreen extends GetView<HomeController> {
           width: double.maxFinite,
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    AppAssets.blackBackgroundScreen,
-                  ),
-                  fit: BoxFit.cover)),
+              color: AppColors.smokeBlack),
           child: GetBuilder<HomeController>(
               initState: (state) => controller.getFavoritesSong(),
               builder: (controller) {

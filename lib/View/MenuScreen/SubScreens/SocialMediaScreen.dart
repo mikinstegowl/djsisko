@@ -276,10 +276,7 @@ class _SocialMediaScreenState extends State<SocialMediaScreen> {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(AppAssets.blackBackgroundScreen),
-            fit: BoxFit.cover,
-          ),
+          color: AppColors.smokeBlack,
         ),
         child: GetBuilder<MenuPageController>(
           init: Get.find<MenuPageController>(),

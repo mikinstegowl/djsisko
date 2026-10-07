@@ -5,7 +5,6 @@ import 'package:new_music_app/Controller/HomeController.dart';
 import 'package:new_music_app/Controller/MenuPageController.dart';
 import 'package:new_music_app/Controller/VideoController.dart';
 import 'package:new_music_app/Utils/ChopperClientService/HomeChopperService.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Network/AppChopperClient.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
@@ -36,11 +35,7 @@ class SearchScreen extends GetView<MenuPageController> {
             body: Container(
               width: double.maxFinite,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        AppAssets.blackBackgroundScreen,
-                      ),
-                      fit: BoxFit.cover)),
+                  color: AppColors.smokeBlack),
               child: DefaultTabController(
                 length: 3,
                 child: GetBuilder<MenuPageController>(

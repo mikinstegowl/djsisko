@@ -38,11 +38,7 @@ class SongPlayScreen extends StatelessWidget {
               builder: (controller) {
                 return Container(
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage(
-                            AppAssets.blackBackgroundScreen,
-                          ),
-                          fit: BoxFit.cover)),
+                      color: AppColors.smokeBlack),
                   child: controller.audioPlayer.builderRealtimePlayingInfos(
                       builder: (context, snapshot) {
                     return snapshot.current?.audio.audio == null

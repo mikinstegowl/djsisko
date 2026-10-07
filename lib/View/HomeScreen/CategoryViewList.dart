@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AnimatedBottomsheet.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
@@ -27,11 +26,7 @@ class CategoryViewList extends GetView<HomeController> {
           bottomNavigationBar: const AnimatedBottomSheet(),
           body: Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      AppAssets.blackBackgroundScreen,
-                    ),
-                    fit: BoxFit.cover)),
+                color: AppColors.smokeBlack),
             child: GetBuilder<HomeController>(
                 init: controller,
                 builder: (context) {

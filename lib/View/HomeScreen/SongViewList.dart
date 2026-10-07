@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/CustomSnackBar.dart';
 import 'package:new_music_app/Utils/Models/HomeModel.dart';
 import 'package:new_music_app/Utils/Services/AdService.dart';
@@ -40,11 +39,7 @@ class SongViewList extends GetView<HomeController> {
           bottomNavigationBar: const AnimatedBottomSheet(),
           body: Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      AppAssets.blackBackgroundScreen,
-                    ),
-                    fit: BoxFit.cover)),
+                color: AppColors.smokeBlack),
             child: GetBuilder<HomeController>(
                 init: controller,
                 builder: (context) {
