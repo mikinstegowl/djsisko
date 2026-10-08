@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDbrvCPQULNIvbZuwI3p4pJCjMU-qfUx4I</string>
+	<string>AIzaSyAjrd3bMGr1BHr4DzdSWAOCsg5n-UkNfPg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>90280684777</string>
+	<string>523303949029</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.jayLyrics</string>
+	<string>com.djsiskoapp.music</string>
 	<key>PROJECT_ID</key>
-	<string>music-d7a6d</string>
+	<string>djsisko-9ed52</string>
 	<key>STORAGE_BUCKET</key>
-	<string>music-d7a6d.firebasestorage.app</string>
+	<string>djsisko-9ed52.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:90280684777:ios:e258880946f8f5caeb5478</string>
+	<string>1:523303949029:ios:401d69d7c8dec69d1a3a0c</string>
+	<key>DATABASE_URL</key>
+	<string>https://djsisko-9ed52-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

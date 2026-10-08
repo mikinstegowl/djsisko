@@ -62,7 +62,7 @@ class SongListWidget extends StatelessWidget {
                       txtTitle: subTitle,
                       fontSize: 10,
                       fontWeight: FontWeight.w500,
-                      txtColor: Colors.red,
+                      txtColor: AppColors.appButton,
                     ),
               trailing: isPlayList
                   ? InkWell(

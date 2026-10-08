@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:new_music_app/Controller/BaseController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Services/AdService.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 
@@ -21,11 +20,7 @@ class BackGroundWidget extends GetView<BaseController> {
             body: Container(
               height: double.maxFinite,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        AppAssets.blackBackgroundScreen,
-                      ),
-                      fit: BoxFit.cover)),
+                  color: AppColors.smokeBlack),
               child: screen,
             ),
             bottomNavigationBar: SafeArea(

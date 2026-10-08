@@ -11,4 +11,5 @@ class AppColors {
   static const Color success = Colors.green;
   static const Color error = Colors.red;
   static const Color black = Colors.black;
+  static const Color smokeBlack = Color(0xFF100C08); // Plain smoke black background
 }

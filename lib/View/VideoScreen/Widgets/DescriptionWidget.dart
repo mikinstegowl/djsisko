@@ -178,7 +178,7 @@ class _DescriptionWidgetState extends State<DescriptionWidget> {
                                   child: AppTextWidget(
                                     txtTitle:
                                         videoData1[index].videosName ?? '',
-                                    txtColor: AppColors.error,
+                                    txtColor: AppColors.appButton,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300,
                                     textAlign: TextAlign.center,

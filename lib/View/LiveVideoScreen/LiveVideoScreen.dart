@@ -123,11 +123,7 @@ class LiveVideoScreen extends GetView<LiveVideoController> {
       body: Container(
           width: double.maxFinite,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    AppAssets.blackBackgroundScreen,
-                  ),
-                  fit: BoxFit.cover)),
+              color: AppColors.smokeBlack),
           child:
               // controller.subscriptionStatusModel?.value?.data?.isActive ??
               //         false

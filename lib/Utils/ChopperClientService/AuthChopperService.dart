@@ -71,4 +71,8 @@ abstract class AuthChopperService extends ChopperService {
   @Post(path: '/auth/change-password')
   Future<Response<GeneralErrorModel>> changePasswordAPi(
       {@body required Map<String, dynamic> param});
+
+  @Post(path: '/auth/delete-account')
+  Future<Response<GeneralErrorModel>> deleteAccountApi(
+      {@body required Map<String, dynamic> param});
 }

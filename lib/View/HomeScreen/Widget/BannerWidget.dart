@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
+import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/CachedNetworkImageWidget.dart';
 
@@ -38,8 +39,9 @@ class BannerWidget extends GetView<HomeController> {
                             fit: BoxFit.fill,
                             image:
                                 controller.banner.value?.data?[index].image ?? '',
+                            fallback: const _LogoBanner(),
                           )
-                        : const SizedBox(),
+                        : const _LogoBanner(),
               ),
               5.verticalSpace,
               Row(
@@ -93,5 +95,33 @@ class BannerWidget extends GetView<HomeController> {
     //     ),
     //   ],
     // );
+  }
+}
+
+/// Branded banner shown when a slider image is missing or fails to load.
+class _LogoBanner extends StatelessWidget {
+  const _LogoBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.maxFinite,
+      decoration: const BoxDecoration(
+        gradient: RadialGradient(
+          radius: 1.2,
+          colors: [Color(0xFF2A2622), AppColors.smokeBlack],
+        ),
+        border: Border(
+          bottom: BorderSide(color: AppColors.appButton, width: 1.5),
+        ),
+      ),
+      child: Center(
+        child: FractionallySizedBox(
+          heightFactor: 1.0,
+          widthFactor: 0.6,
+          child: Image.asset(AppAssets.alajazaLogo, fit: BoxFit.contain),
+        ),
+      ),
+    );
   }
 }

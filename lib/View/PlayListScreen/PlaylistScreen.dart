@@ -24,11 +24,7 @@ class PlayListScreen extends GetView<PlayListController> {
       width: double.maxFinite,
       padding: EdgeInsets.symmetric(horizontal: 5.w),
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                AppAssets.blackBackgroundScreen,
-              ),
-              fit: BoxFit.cover)),
+          color: AppColors.smokeBlack),
       child: GetBuilder<PlayListController>(initState: (state) {
         controller.getPlayListAPi();
       }, builder: (controller) {

@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
 import 'package:new_music_app/Controller/MenuPageController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:new_music_app/Utils/Widgets/AppNavigationBar.dart';
 import 'package:new_music_app/Utils/Widgets/AppTextWidget.dart';
@@ -23,11 +22,7 @@ class MyFavoriteVideoScreen extends GetView<MenuPageController> {
         body: Container(
           width: double.maxFinite,
           decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    AppAssets.blackBackgroundScreen,
-                  ),
-                  fit: BoxFit.cover)),
+              color: AppColors.smokeBlack),
           child: Column(
             children: [
               const TitleBackButtonWidget(title: 'My Favorite Video'),
@@ -111,7 +106,7 @@ class MyFavoriteVideoScreen extends GetView<MenuPageController> {
                                         txtTitle: controller.getFavouriteVideoModel
                                                 .value?.data?[index].videosName ??
                                             '',
-                                        txtColor: AppColors.error,
+                                        txtColor: AppColors.appButton,
                                         fontSize: 14,
                                         fontWeight: FontWeight.w300,
                                         textAlign: TextAlign.center,

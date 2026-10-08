@@ -1,9 +1,9 @@
+import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_music_app/Controller/BaseController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Constants/AppExtension.dart';
 import 'package:new_music_app/Utils/Models/VideoCategoryItemModel.dart';
@@ -95,10 +95,7 @@ class _VideoWatchScreenState extends State<VideoWatchScreen>
           appBar: AppNavigationBar(defaultAppBar: AppBar()),
           body: Container(
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(AppAssets.blackBackgroundScreen),
-                fit: BoxFit.cover,
-              ),
+              color: AppColors.smokeBlack,
             ),
             child: Column(
               children: [

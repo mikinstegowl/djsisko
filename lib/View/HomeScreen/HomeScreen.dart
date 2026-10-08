@@ -1,3 +1,4 @@
+import 'package:new_music_app/Utils/Styling/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -5,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:new_music_app/Controller/AuthController.dart';
 import 'package:new_music_app/Controller/HomeController.dart';
 import 'package:new_music_app/Controller/MenuPageController.dart';
-import 'package:new_music_app/Utils/Constants/AppAssets.dart';
 import 'package:new_music_app/Utils/Constants/AppConst.dart';
 import 'package:new_music_app/Utils/Services/AdService.dart';
 import 'package:new_music_app/Utils/Widgets/AppLoder.dart';
@@ -23,11 +23,7 @@ class HomeScreen extends GetView<HomeController> {
         Container(
             height: double.maxFinite,
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(
-                      AppAssets.blackBackgroundScreen,
-                    ),
-                    fit: BoxFit.cover)),
+                color: AppColors.smokeBlack),
             child: GetBuilder<HomeController>(
                 init: controller,
                 initState: (state) {
